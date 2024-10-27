@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 const CustomScreenHeader(),
                 Expanded(child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.06, vertical: size.height * 0.035),
                   width: double.infinity,
                     color: AppColors.kSecondaryColor,
                     child: Text("Welcome, \nExplore our collection", style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColors.kBrownColor, fontWeight: FontWeight.w500)))),

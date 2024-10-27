@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 class CustomScreenHeader extends StatelessWidget {
   const CustomScreenHeader({
     super.key,
+    this.color = AppColors.kSecondaryColor,
   });
-
+  final Color color;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Container(
-      color: AppColors.kSecondaryColor,
-      padding: EdgeInsets.only(top: size.height * 0.07, bottom: size.height * 0.06, left: size.width * 0.06, right: size.width * 0.06),
+      color: color,
+      padding: EdgeInsets.only(top: size.height * 0.07, left: size.width * 0.06, right: size.width * 0.06),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -20,7 +20,7 @@ class HomeSideArrows extends StatelessWidget {
           children: [
             IconButton(onPressed: (){
               notifier.previousPage();
-            }, icon: const Icon(Icons.arrow_left)),
+            }, icon: Image.asset("assets/icons/arrow_left.png")),
             IconButton(onPressed: (){
               notifier.nextPage();
             }, icon: const Icon(Icons.arrow_right))
