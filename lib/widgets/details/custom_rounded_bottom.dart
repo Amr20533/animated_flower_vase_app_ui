@@ -14,7 +14,7 @@ class CustomRoundedButton extends StatelessWidget {
     Size size = MediaQuery.sizeOf(context);
     return Container(
       width: double.infinity,
-      height: size.height * 0.08,
+      height: size.height * 0.076,
       padding: const EdgeInsets.only(bottom: 16, left: 26, right: 26),
       child: ElevatedButton(
         onPressed: () {},

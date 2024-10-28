@@ -18,11 +18,19 @@ class AnimatedCircleState extends State<AnimatedCircle>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 200),
       vsync: this,
-    )..forward().then((_) => _controller.reverse());
+    );
 
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _controller.forward();
+    });
   }
 
   @override
@@ -34,11 +42,17 @@ class AnimatedCircleState extends State<AnimatedCircle>
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: CustomPaint(
-        size: const Size(double.infinity, 300),
-          painter: DetailsDecoratedBackground(leftOffset: _animation.value * MediaQuery.sizeOf(context).width * 0.62,
-      color: AppColors.kSecondaryColor,
-          ),
+      child: AnimatedBuilder(
+        animation: _animation,
+        builder: (context, child) {
+          return CustomPaint(
+            size: const Size(double.infinity, 300),
+            painter: DetailsDecoratedBackground(
+              leftOffset: _animation.value * MediaQuery.sizeOf(context).width * 0.31,
+              color: AppColors.kSecondaryColor,
+            ),
+          );
+        },
       ),
     );
   }

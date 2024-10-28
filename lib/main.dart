@@ -1,5 +1,8 @@
 import 'package:animated_flower_vase_app_ui/models/vase_model.dart';
+import 'package:animated_flower_vase_app_ui/notifiers/cart_notifier.dart';
+import 'package:animated_flower_vase_app_ui/notifiers/details_notifier.dart';
 import 'package:animated_flower_vase_app_ui/notifiers/home_notifier.dart';
+import 'package:animated_flower_vase_app_ui/views/cart_screen.dart';
 import 'package:animated_flower_vase_app_ui/views/details_screen.dart';
 import 'package:animated_flower_vase_app_ui/views/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +12,8 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => HomeNotifier()),
+    ChangeNotifierProvider(create: (context) => DetailsNotifier()),
+    ChangeNotifierProvider(create: (context) => CartNotifier()),
   ],
    child: const MyApp(),
   ));
@@ -28,14 +33,15 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      // home: const DetailsScreen(),
+      // home: const CartScreen(),
       routes: {
         "/" :(context) => const HomeScreen(),
         "/detail" :(context) {
           final VaseModel vaseModel = ModalRoute.of(context)!.settings.arguments as VaseModel;
           return DetailsScreen(vaseModel: vaseModel);
         },
-      },
+        "/cart" :(context) => const CartScreen(),
+        },
     );
   }
 }

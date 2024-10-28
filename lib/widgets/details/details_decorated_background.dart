@@ -9,7 +9,7 @@ DetailsDecoratedBackground({required this.leftOffset, required this.color});
 
 @override
 void paint(Canvas canvas, Size size) {
-  double radius = size.width * 0.56;
+  double radius = size.width * 0.54;
 
   Paint backgroundPaint = Paint()..color = AppColors.kPrimaryColor;
   canvas.drawRect(Rect.fromLTRB(0, 0, size.width, size.height), backgroundPaint);
@@ -24,8 +24,8 @@ void paint(Canvas canvas, Size size) {
   canvas.drawPath(path, circlePaint);
 }
 
-@override
-bool shouldRepaint(DetailsDecoratedBackground oldDelegate) {
-  return leftOffset != oldDelegate.leftOffset || color != oldDelegate.color;
-}
+  @override
+  bool shouldRepaint(DetailsDecoratedBackground oldDelegate) {
+    return leftOffset != oldDelegate.leftOffset || color != oldDelegate.color;
+  }
 }

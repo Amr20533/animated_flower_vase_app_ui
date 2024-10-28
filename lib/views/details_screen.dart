@@ -1,7 +1,9 @@
 import 'package:animated_flower_vase_app_ui/utils/themes/app_colors.dart';
 import 'package:animated_flower_vase_app_ui/widgets/details/animated_details_circle.dart';
 import 'package:animated_flower_vase_app_ui/widgets/details/custom_rounded_bottom.dart';
-import 'package:animated_flower_vase_app_ui/widgets/home/custom_screen_header.dart';
+import 'package:animated_flower_vase_app_ui/widgets/details/details_header.dart';
+import 'package:animated_flower_vase_app_ui/widgets/details/expandable_description.dart';
+import 'package:animated_flower_vase_app_ui/widgets/details/quantity_counter.dart';
 import 'package:flutter/material.dart';
 
 
@@ -28,10 +30,10 @@ class DetailsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                          // width: size.width * 0.6,
-                          // height: size.height * 0.26,
                           margin: EdgeInsets.only(top: size.height * 0.1),
-                          child: Image.asset(vaseModel.image, width: size.width * 0.8,height: size.width * 0.8,)),
+                          child: Image.asset(vaseModel.image,
+                            width: size.width * 0.8,
+                            height: size.width * 0.8,)),
                     ],
                   ),
                 ),
@@ -44,7 +46,7 @@ class DetailsScreen extends StatelessWidget {
               width: size.width,
               child: Column(
                 children: [
-                  const CustomScreenHeader(color: AppColors.kPrimaryColor,),
+                  const DetailsHeader(),
                   SizedBox(height: size.height * 0.03,),
                   SizedBox(
                     width: size.width * 0.7,
@@ -56,19 +58,17 @@ class DetailsScreen extends StatelessWidget {
             ),
           ),
 
-          Positioned(
-              bottom: size.height * 0.14,
-              child: Align(
-                alignment: Alignment.center,
-                child: Container(
-                            width: size.width * 0.9,color: Colors.blue,
-                            alignment: Alignment.center,
-                            child: Center(child: Text(vaseModel.description, style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 16),)),
-                          ),
-              )),
-          const Align(
+          Align(
               alignment: Alignment.bottomCenter,
-              child: CustomRoundedButton(title: "Add to cart",))
+              child: Column(mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ExpandableDescription(title: vaseModel.description),
+
+                  QuantityCounter(bottomMargin: size.height * 0.003,),
+
+                  const CustomRoundedButton(title: "Add to cart",),
+                ],
+              ))
 
 
 
@@ -77,4 +77,6 @@ class DetailsScreen extends StatelessWidget {
     );
   }
 }
+
+
 

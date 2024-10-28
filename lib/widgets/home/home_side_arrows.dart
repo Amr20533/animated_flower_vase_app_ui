@@ -23,7 +23,7 @@ class HomeSideArrows extends StatelessWidget {
             }, icon: Image.asset("assets/icons/arrow_left.png")),
             IconButton(onPressed: (){
               notifier.nextPage();
-            }, icon: const Icon(Icons.arrow_right))
+            }, icon: Image.asset("assets/icons/arrow_right.png")),
           ],
         ),
       );

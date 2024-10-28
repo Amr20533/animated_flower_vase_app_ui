@@ -1,4 +1,6 @@
 import 'package:animated_flower_vase_app_ui/utils/themes/app_colors.dart';
+import 'package:animated_flower_vase_app_ui/utils/transitions/fade_transition_route.dart';
+import 'package:animated_flower_vase_app_ui/views/cart_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomScreenHeader extends StatelessWidget {
@@ -24,6 +26,9 @@ class CustomScreenHeader extends StatelessWidget {
           Text("EOSty", style: Theme.of(context).textTheme.titleLarge!.copyWith(color: AppColors.kBlackTextColor,fontSize: 20, fontWeight: FontWeight.w700)),
           GestureDetector(
             onTap: (){
+              Navigator.of(context).push(
+                fadeTransitionRoute(const CartScreen()),
+              );
             },
             child: Text("Cart", style: Theme.of(context).textTheme.titleSmall!.copyWith(color: AppColors.kBlackTextColor)),
           ),

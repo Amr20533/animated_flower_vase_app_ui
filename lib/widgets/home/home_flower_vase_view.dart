@@ -50,10 +50,10 @@ class HomeFlowerVaseView extends StatelessWidget {
                           Transform.scale(
                             scale: scale,
                             child: Container(
-                                width: size.width * 0.6,
+                                width: size.width * 0.8,
                                 height: size.height * 0.26,
                                 alignment: Alignment.bottomCenter,
-                                child: Image.asset(flower.image, scale: 0.12,)),
+                                child: Image.asset(flower.image, fit: BoxFit.cover, width: size.width * 0.5,height: size.width * 0.5)),
                           ),
                         ],
                       ),
