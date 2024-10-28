@@ -19,7 +19,7 @@ class HomeFlowerVaseView extends StatelessWidget {
           transform: Matrix4.rotationZ(-0.785398),
           child: Container(
             width: size.width * 0.5,
-            height: size.height * 0.8,
+            height: size.height * 0.82,
             margin: const EdgeInsets.only(right: 26),
             child: PageView.builder(
               controller: notifier.flowerPageController,
@@ -49,11 +49,7 @@ class HomeFlowerVaseView extends StatelessWidget {
                         children: [
                           Transform.scale(
                             scale: scale,
-                            child: Container(
-                                width: size.width * 0.8,
-                                height: size.height * 0.26,
-                                alignment: Alignment.bottomCenter,
-                                child: Image.asset(flower.image, fit: BoxFit.cover, width: size.width * 0.5,height: size.width * 0.5)),
+                            child: Image.asset(flower.image, fit: BoxFit.cover, width: size.width * 0.5,height: size.width * 0.5),
                           ),
                         ],
                       ),
