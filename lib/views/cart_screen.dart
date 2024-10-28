@@ -71,7 +71,7 @@ class CartScreenState extends State<CartScreen> with SingleTickerProviderStateMi
             },
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.04),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.04, vertical: size.height * 0.02),
             child: Column(
               children: [
                 AnimatedList(
