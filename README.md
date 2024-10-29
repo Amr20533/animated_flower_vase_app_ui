@@ -7,5 +7,3 @@ The App UI features a vibrant, interactive design that brings your floral arrang
 
 # Demo
 https://github.com/user-attachments/assets/076800fb-44ed-457c-953a-3dadb42b5a2d
-
-Uploading flower_vase.mp4…
